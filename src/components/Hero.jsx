@@ -67,7 +67,7 @@ const Hero = () => {
       {/* Main Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400 drop-shadow-lg">
-          ANDEROPEDIA
+          ANDROPEDIA
         </h1>
         <p className="text-blue-200 mt-4 text-sm md:text-base tracking-[0.5em] font-mono">
           SYSTEM ONLINE

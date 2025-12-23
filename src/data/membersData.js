@@ -11,6 +11,16 @@ export const membersData = [
   },
   {
     id: 8,
+    name: "Pranav S A",
+    role: "Vice President",
+    image: "/media/members/pranav.jpeg",
+    tier: "CORE",
+    domain: "",
+    linkedin: "https://www.linkedin.com/in/pranav-sa/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: null
+  },
+  {
+    id: 9,
     name: "Janar Preethika",
     role: "Technical Mentor",
     image: "/media/members/janar.jpg",
@@ -20,7 +30,7 @@ export const membersData = [
     instagram: null
   },
   {
-    id: 9,
+    id: 10,
     name: "Vishwanathan Sivaraman",
     role: "Chief Photographer",
     image: "/media/members/10a5c325-3d26-4868-b22d-9a7148922178_-_vishwanathan_sivaraman.jpeg",
@@ -127,13 +137,13 @@ export const membersData = [
   { id: 16, name: "Mifra", role: "active member", image: "/media/members/IMG_8312_-_Mifra_Znnh2iy.jpeg", tier: "MEMBER", domain: "TECH" },
   { id: 17, name: "KAUSHAL KARTIKEYA", role: "active member", image: "/media/members/IMG_20230114_210500_-_KAUSHAL_KARTIKEYA_BUDIDA_RA2411028020075.jpg", tier: "MEMBER", domain: "TECH" },
   { id: 18, name: "Bhavishya", role: "active member", image: "/media/members/Bhavishya_photo.jpg", tier: "MEMBER", domain: "TECH" },
-  { id: 19, name: "Dhatri Sahu", role: "active member", image: "/media/members/20251213_1702051_-_Dhatri_Sahu.jpg", tier: "MEMBER", domain: "TECH" },
+  { id: 19, name: "Dhatri Sahu", role: "active member", image: "/media/members/20251213_1702051_-_Dhatri_Sahu.jpg", tier: "MEMBER", domain: "MEDIA" },
   { id: 20, name: "Nishit Patnaik", role: "active member", image: "/media/members/20251128_105043_-_Nishit_Patnaik.jpg", tier: "MEMBER", domain: "TECH" },
   { id: 21, name: "Srinath", role: "active member", image: "/media/members/Srinath_photo.png", tier: "MEMBER", domain: "TECH" },
   { id: 24, name: "Srija Mandal", role: "active member", image: "/media/members/20251101_165757_-_Srija_Mandal.jpg", tier: "MEMBER", domain: "MEDIA" },
   { id: 25, name: "Sulagno Jana", role: "active member", image: "/media/members/B2D1551E-2A0E-4A69-9F59-C8EA1DC14D6A_-_Sulagno_Jana.jpeg", tier: "MEMBER", domain: "MEDIA" },
   { id: 26, name: "HANEESH", role: "active member", image: "/media/members/HANEESH_-_Haneesh_Kolisetty.jpg", tier: "MEMBER", domain: "MEDIA" },
-  { id: 27, name: "APR Fernando", role: "active member", image: "/media/members/IMG_20210114_205142_985_-_APR_Fernando.jpg", tier: "MEMBER", domain: "MEDIA" },
+  { id: 27, name: "Pon Infant Raja", role: "active member", image: "/media/members/IMG_20210114_205142_985_-_APR_Fernando.jpg", tier: "MEMBER", domain: "MEDIA" },
   { id: 28, name: "Pavan Kalyan", role: "active member", image: "/media/members/IMG_20250217_014958_-_Pavan_Kalyan_CHANDU.jpg", tier: "MEMBER", domain: "MEDIA" },
   { id: 29, name: "Vishita Thomas", role: "active member", image: "/media/members/IMG-20250126-WA0102.jpg", tier: "MEMBER", domain: "MEDIA" },
   { id: 30, name: "Chandramouli D", role: "active member", image: "/media/members/pfp_-_Chandramouli_D.png", tier: "MEMBER", domain: "MEDIA" },
