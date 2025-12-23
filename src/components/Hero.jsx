@@ -8,7 +8,6 @@ function FloatingLogo() {
   const texture = useTexture('/logo.png');
 
   useFrame((state, delta) => {
-    // Keep auto-rotation (so it moves even if user doesn't touch it)
     meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.1;
     meshRef.current.rotation.y += delta * 0.2; 
   });
@@ -32,24 +31,30 @@ function FloatingLogo() {
 const Hero = () => {
   return (
     <div className="h-screen w-full relative">
+      
+      {/* === MAGIC FIX: Force Browser to Allow Scrolling === */}
+      <style>{`
+        #root canvas {
+          touch-action: pan-y !important; 
+        }
+      `}</style>
+
       <Canvas 
         camera={{ position: [0, 0, 5] }}
-        // IMPORTANT: CSS class handles the touch-action now
-        className="touch-action-pan-y" 
       >
         <ambientLight intensity={1} />
         <directionalLight position={[2, 5, 2]} intensity={2} />
         
         <FloatingLogo />
         
-        {/* enableZoom={false}: Prevents pinch-to-zoom (stops page zoom issues)
-           enablePan={false}: Prevents dragging the logo off-screen
-           rotateSpeed={0.5}: Makes it less sensitive so scrolling is easier
+        {/* enableZoom={false} -> Prevents page zooming
+           enablePan={false}  -> Prevents dragging logo off center
+           rotateSpeed={0.5}  -> Low sensitivity makes scrolling easier
         */}
         <OrbitControls 
-           enableZoom={false} 
-           enablePan={false} 
-           rotateSpeed={0.5} 
+          enableZoom={false} 
+          enablePan={false} 
+          rotateSpeed={0.5} 
         />
         
         <EffectComposer>
@@ -57,8 +62,7 @@ const Hero = () => {
         </EffectComposer>
       </Canvas>
 
-      {/* Hero Text Overlay */}
-      <div className="hero-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400 drop-shadow-lg">
           ANDEROPEDIA
         </h1>
