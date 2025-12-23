@@ -1,0 +1,22 @@
+export const galleryData = [
+  "/media/gallery/2.png",
+  "/media/gallery/3.png",
+  "/media/gallery/4.png",
+  "/media/gallery/5.png",
+  "/media/gallery/6.png",
+  "/media/gallery/DSC_0114.JPG",
+  "/media/gallery/_DSC3836.JPG",
+  "/media/gallery/_DSC4224.JPG",
+  "/media/gallery/_DSC3799.JPG",
+  "/media/gallery/_DSC3804.JPG",
+  "/media/gallery/_DSC4321.JPG",
+  "/media/gallery/_DSC3884.JPG",
+  "/media/gallery/_DSC3875.JPG",
+  "/media/gallery/_DSC3887.JPG",
+  "/media/gallery/DSC_0050.JPG",
+  "/media/gallery/_DSC4182_6ZqOjLC.JPG",
+  "/media/gallery/IMG_1081.JPG",
+  "/media/gallery/IMG_1078_b6JSwtE.JPG",
+  "/media/gallery/IMG_1034.JPG",
+  "/media/gallery/_DSC4016.JPG"
+];

@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 1. BASIC SETUP === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* === 2. SCROLLBAR CUSTOMIZATION === */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* === 3. ANIMATIONS === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes modalPop {
+  0% { opacity: 0; transform: scale(0.9) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-modal-pop {
+  animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scrollText {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-scroll-text {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollText 20s linear infinite;
+}
+.animate-scroll-text:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spinReverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+.animate-spin-reverse {
+  animation: spinReverse 3s linear infinite;
+}
+
+@keyframes loadingBar {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+.animate-loading-bar {
+  animation: loadingBar 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* === 4. UTILITIES === */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.gallery-scene {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.gallery-helix {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* === 5. CYBER CARD STYLES (For About Section) === */
+.cyber-card {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@keyframes scan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scanner-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+  animation: scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 20;
+}
+
+.corner-marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: rgba(59, 130, 246, 0.5);
+  border-style: solid;
+  transition: all 0.3s ease;
+}
+.cyber-card:hover .corner-marker {
+  border-color: #3b82f6;
+  width: 15px;
+  height: 15px;
+}
+
+/* === GALLERY 3D UPDATES === */
+
+.perspective-container {
+  perspective: 1500px; /* Controls how "deep" the 3D effect looks */
+  overflow: hidden;    /* Prevents scrollbars from appearing due to 3D elements */
+}
+
+.gallery-scene {
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-cylinder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  /* This centers the cylinder so rotation happens from the middle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === INFINITE MARQUEE ANIMATION === */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+  /* We move -50% because we duplicated the list. 
+     This creates a seamless loop. */
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+  display: flex;
+  width: max-content; /* Ensures the row takes up as much space as images need */
+}
+
+/* Optional: Hide scrollbars globally if they appear */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
