@@ -60,7 +60,7 @@ const Hero = () => {
         <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
         
         <EffectComposer>
-          <Bloom luminanceThreshold={0.2} intensity={0.5} mipmapBlur />
+          <Bloom luminanceThreshold={0.5} intensity={0.5} mipmapBlur />
         </EffectComposer>
       </Canvas>
 
@@ -80,7 +80,7 @@ const Hero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 text-blue-400/80 hover:text-white transition-all duration-300 group cursor-pointer"
       >
         <span className="text-[10px] tracking-[0.3em] font-mono uppercase group-hover:tracking-[0.5em] transition-all duration-300">
-          Initialize System
+          Initialize System -- Click Here
         </span>
         <div className="relative">
           <Mouse size={28} />
