@@ -60,7 +60,7 @@ const Hero = () => {
         <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
         
         <EffectComposer>
-          <Bloom luminanceThreshold={3} intensity={2.5} mipmapBlur />
+          <Bloom luminanceThreshold={0} intensity={2.5} mipmapBlur />
         </EffectComposer>
       </Canvas>
 
