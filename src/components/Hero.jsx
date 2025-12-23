@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useTexture } from '@react-three/drei';
+import { OrbitControls, useTexture, Sparkles } from '@react-three/drei'; // <--- Added Sparkles
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
-import { ChevronDown, Mouse } from 'lucide-react'; // Added icons
+import { ChevronDown, Mouse } from 'lucide-react';
 
 function FloatingLogo() {
   const meshRef = useRef();
@@ -23,14 +23,13 @@ function FloatingLogo() {
         toneMapped={false}
         emissive={[1, 1, 1]} 
         emissiveMap={texture}
-        emissiveIntensity={0.8}  /* REDUCED GLOW (Was 2) */
+        emissiveIntensity={0.8} 
       />
     </mesh>
   );
 }
 
 const Hero = () => {
-  // Function to scroll down 1 full screen height
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -42,16 +41,25 @@ const Hero = () => {
     <div className="h-screen w-full relative bg-black">
       
       {/* 3D Scene */}
-      <Canvas camera={{ position: [0, 0, 5] }} className="touch-action-pan-y">
+      <Canvas camera={{ position: [0, 0, 5] }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[2, 5, 2]} intensity={1.5} />
         
+        {/* === THE BUBBLES ARE HERE === */}
+        <Sparkles 
+           count={100} 
+           scale={10} 
+           size={3} 
+           speed={0.4} 
+           opacity={0.4} 
+           color="#60a5fa" // Light Blue
+        />
+
         <FloatingLogo />
         
         <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
         
         <EffectComposer>
-          {/* REDUCED GLOW INTENSITY (Was 1.5) */}
           <Bloom luminanceThreshold={0.2} intensity={0.5} mipmapBlur />
         </EffectComposer>
       </Canvas>
@@ -66,7 +74,7 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* STYLISH SCROLL BUTTON */}
+      {/* Scroll Button */}
       <button 
         onClick={handleScrollDown}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 text-blue-400/80 hover:text-white transition-all duration-300 group cursor-pointer"
@@ -74,16 +82,19 @@ const Hero = () => {
         <span className="text-[10px] tracking-[0.3em] font-mono uppercase group-hover:tracking-[0.5em] transition-all duration-300">
           Initialize System
         </span>
-        
-        {/* Animated Mouse Icon */}
         <div className="relative">
           <Mouse size={28} />
           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full animate-scroll-down"></div>
         </div>
-
-        {/* Bouncing Arrow */}
         <ChevronDown size={20} className="animate-bounce mt-[-5px]" />
       </button>
+
+      {/* Force Mobile Scroll CSS */}
+      <style>{`
+        #root canvas {
+          touch-action: pan-y !important; 
+        }
+      `}</style>
 
     </div>
   );
