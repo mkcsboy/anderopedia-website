@@ -8,13 +8,15 @@ function FloatingLogo() {
   const texture = useTexture('/logo.png');
 
   useFrame((state, delta) => {
+    // Keep the gentle floating animation
     meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.1;
+    // Slow auto-rotation
     meshRef.current.rotation.y += delta * 0.2; 
   });
 
   return (
     <mesh ref={meshRef}>
-      <planeGeometry args={[3, 3]} />
+      <planeGeometry args={[6, 6]} />
       <meshStandardMaterial 
         map={texture} 
         transparent={true} 
@@ -31,11 +33,25 @@ function FloatingLogo() {
 const Hero = () => {
   return (
     <div className="h-screen w-full relative">
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      
+      {/* FIX: Added style={{ touchAction: 'pan-y' }} 
+         This tells the browser: "Allow vertical scrolling (pan-y), but capture horizontal swipes for the 3D model."
+      */}
+      <Canvas 
+        camera={{ position: [0, 0, 5] }} 
+        style={{ touchAction: 'pan-y' }}
+        className="touch-pan-y"
+      >
         <ambientLight intensity={1} />
         <directionalLight position={[2, 5, 2]} intensity={2} />
+        
         <FloatingLogo />
-        <OrbitControls enableZoom={false} />
+        
+        {/* FIX: Added enablePan={false} to stop users from accidentally dragging the logo off-screen.
+           enableZoom={false} prevents zooming which also messes up scrolling.
+        */}
+        <OrbitControls enableZoom={false} enablePan={false} />
+        
         <EffectComposer>
           <Bloom luminanceThreshold={0} intensity={1.5} mipmapBlur />
         </EffectComposer>
@@ -43,7 +59,7 @@ const Hero = () => {
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400 drop-shadow-lg">
-          ANDROPEDIA
+          ANDEROPEDIA
         </h1>
         <p className="text-blue-200 mt-4 text-sm md:text-base tracking-[0.5em] font-mono">
           SYSTEM ONLINE
