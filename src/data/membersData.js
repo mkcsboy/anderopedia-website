@@ -22,7 +22,7 @@ export const membersData = [
   {
     id: 9,
     name: "Vishwanathan Sivaraman",
-    role: "Chef Photographer",
+    role: "Chief Photographer",
     image: "/media/members/10a5c325-3d26-4868-b22d-9a7148922178_-_vishwanathan_sivaraman.jpeg",
     tier: "CORE",
     domain: "",
@@ -109,6 +109,16 @@ export const membersData = [
     linkedin: "https://www.linkedin.com/in/adithya-tripathi-s-b7638a269/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     instagram: null
   },
+  {
+    id: 50,
+    name: "Siddartha",
+    role: "Co - Lead",
+    image: "/media/members/siddartha.jpg",
+    tier: "LEAD",
+    domain: "DESIGN",
+    linkedin: "https://www.linkedin.com/in/sidhartha-balasani-73601b332?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    instagram: null
+  },
   // ... (I have included all active members below)
   { id: 10, name: "Sejal Bheda", role: "active member", image: "/media/members/IMG_2834_-_Sejal_Bheda.JPEG", tier: "MEMBER", domain: "TECH" },
   { id: 13, name: "Vishita Thomas", role: "active member", image: "/media/members/Copy_of_IMG-20250126-WA0102_5Cc7qyb.jpg", tier: "MEMBER", domain: "TECH" },
@@ -135,8 +145,6 @@ export const membersData = [
   { id: 42, name: "Prithviraj", role: "active member", image: "/media/members/WhatsApp_Image_2025-12-22_at_9.29.03_PM.jpeg", tier: "MEMBER", domain: "R&D" },
   { id: 43, name: "Tanvi", role: "active member", image: "/media/members/WhatsApp_Image_2025-12-22_at_11.16.01_PM.jpeg", tier: "MEMBER", domain: "MEDIA" },
   { id: 44, name: "Sanjai Baiju", role: "active member", image: "/media/members/IMG_0244_-_Sanjai_Biju.jpeg", tier: "MEMBER", domain: "DESIGN" },
-  { id: 45, name: "Aashwanth", role: "active member", image: "public/media/members/Aashwanth.jpg", tier: "MEMBER",
-    domain: "DESIGN", // Which squad do they belong to?
-    linkedin: null,
-    instagram: null},
+  { id: 45, name: "Aashwanth", role: "active member", image: "/media/members/aashwanth.jpg", tier: "MEMBER",
+    domain: "DESIGN"}
 ];

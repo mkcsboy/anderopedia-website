@@ -56,7 +56,7 @@ const Navbar = () => {
         className="text-2xl font-bold tracking-tighter text-white cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        ANDEROPEDIA
+        Andropedia
       </div>
 
       {/* Desktop Menu */}
