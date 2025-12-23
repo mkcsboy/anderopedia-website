@@ -8,15 +8,14 @@ function FloatingLogo() {
   const texture = useTexture('/logo.png');
 
   useFrame((state, delta) => {
-    // Keep the gentle floating animation
     meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.1;
-    // Slow auto-rotation
     meshRef.current.rotation.y += delta * 0.2; 
   });
 
   return (
     <mesh ref={meshRef}>
-      <planeGeometry args={[6, 6]} />
+      {/* Kept your size of [3, 3] */}
+      <planeGeometry args={[3, 3]} />
       <meshStandardMaterial 
         map={texture} 
         transparent={true} 
@@ -34,11 +33,10 @@ const Hero = () => {
   return (
     <div className="h-screen w-full relative">
       
-      {/* FIX: Added style={{ touchAction: 'pan-y' }} 
-         This tells the browser: "Allow vertical scrolling (pan-y), but capture horizontal swipes for the 3D model."
-      */}
+      {/* FIX APPLIED HERE: */}
       <Canvas 
         camera={{ position: [0, 0, 5] }} 
+        // 1. This style allows vertical scrolling on mobile
         style={{ touchAction: 'pan-y' }}
         className="touch-pan-y"
       >
@@ -47,9 +45,7 @@ const Hero = () => {
         
         <FloatingLogo />
         
-        {/* FIX: Added enablePan={false} to stop users from accidentally dragging the logo off-screen.
-           enableZoom={false} prevents zooming which also messes up scrolling.
-        */}
+        {/* 2. Added enablePan={false} so users can't drag the logo away */}
         <OrbitControls enableZoom={false} enablePan={false} />
         
         <EffectComposer>
