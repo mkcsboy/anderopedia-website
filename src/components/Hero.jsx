@@ -8,13 +8,13 @@ function FloatingLogo() {
   const texture = useTexture('/logo.png');
 
   useFrame((state, delta) => {
+    // Keep auto-rotation (so it moves even if user doesn't touch it)
     meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.1;
     meshRef.current.rotation.y += delta * 0.2; 
   });
 
   return (
     <mesh ref={meshRef}>
-      {/* Kept your size of [3, 3] */}
       <planeGeometry args={[3, 3]} />
       <meshStandardMaterial 
         map={texture} 
@@ -32,28 +32,33 @@ function FloatingLogo() {
 const Hero = () => {
   return (
     <div className="h-screen w-full relative">
-      
-      {/* FIX APPLIED HERE: */}
       <Canvas 
-        camera={{ position: [0, 0, 5] }} 
-        // 1. This style allows vertical scrolling on mobile
-        style={{ touchAction: 'pan-y' }}
-        className="touch-pan-y"
+        camera={{ position: [0, 0, 5] }}
+        // IMPORTANT: CSS class handles the touch-action now
+        className="touch-action-pan-y" 
       >
         <ambientLight intensity={1} />
         <directionalLight position={[2, 5, 2]} intensity={2} />
         
         <FloatingLogo />
         
-        {/* 2. Added enablePan={false} so users can't drag the logo away */}
-        <OrbitControls enableZoom={false} enablePan={false} />
+        {/* enableZoom={false}: Prevents pinch-to-zoom (stops page zoom issues)
+           enablePan={false}: Prevents dragging the logo off-screen
+           rotateSpeed={0.5}: Makes it less sensitive so scrolling is easier
+        */}
+        <OrbitControls 
+           enableZoom={false} 
+           enablePan={false} 
+           rotateSpeed={0.5} 
+        />
         
         <EffectComposer>
           <Bloom luminanceThreshold={0} intensity={1.5} mipmapBlur />
         </EffectComposer>
       </Canvas>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-10">
+      {/* Hero Text Overlay */}
+      <div className="hero-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-400 drop-shadow-lg">
           ANDEROPEDIA
         </h1>

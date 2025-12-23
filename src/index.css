@@ -195,3 +195,13 @@ body {
   background: #333;
   border-radius: 4px;
 }
+
+/* === FORCE MOBILE SCROLLING === */
+canvas {
+  touch-action: pan-y !important; /* Forces browser to handle vertical swipes */
+}
+
+/* Optional: Ensures the text overlay allows scrolling too */
+.hero-text {
+  pointer-events: none; /* Lets clicks pass through to the canvas */
+}
