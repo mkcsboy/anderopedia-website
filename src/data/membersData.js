@@ -26,7 +26,7 @@ export const membersData = [
     image: "/media/members/10a5c325-3d26-4868-b22d-9a7148922178_-_vishwanathan_sivaraman.jpeg",
     tier: "CORE",
     domain: "",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/vishwanathan-sivaraman-201a80248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     instagram: null
   },
   {
