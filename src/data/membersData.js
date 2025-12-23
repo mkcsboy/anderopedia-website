@@ -113,7 +113,7 @@ export const membersData = [
     id: 50,
     name: "Siddartha",
     role: "Co - Lead",
-    image: "/media/members/siddartha.jpg",
+    image: "public/media/members/Siddartha.jpeg",
     tier: "LEAD",
     domain: "DESIGN",
     linkedin: "https://www.linkedin.com/in/sidhartha-balasani-73601b332?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -145,6 +145,6 @@ export const membersData = [
   { id: 42, name: "Prithviraj", role: "active member", image: "/media/members/WhatsApp_Image_2025-12-22_at_9.29.03_PM.jpeg", tier: "MEMBER", domain: "R&D" },
   { id: 43, name: "Tanvi", role: "active member", image: "/media/members/WhatsApp_Image_2025-12-22_at_11.16.01_PM.jpeg", tier: "MEMBER", domain: "MEDIA" },
   { id: 44, name: "Sanjai Baiju", role: "active member", image: "/media/members/IMG_0244_-_Sanjai_Biju.jpeg", tier: "MEMBER", domain: "DESIGN" },
-  { id: 45, name: "Aashwanth", role: "active member", image: "/media/members/aashwanth.jpg", tier: "MEMBER",
+  { id: 45, name: "Aashwanth", role: "active member", image: "public/media/members/Aashwanth.jpg", tier: "MEMBER",
     domain: "DESIGN"}
 ];

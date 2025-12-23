@@ -96,12 +96,12 @@ const Footer = () => {
             <div className="flex gap-4">
                {/* LinkedIn */}
                <SocialIcon 
-                 href="https://www.linkedin.com/company/Andropedia-club/" 
+                 href="https://www.linkedin.com/company/ANDROPEDIA-club/" 
                  icon={<Linkedin size={20} />} 
                />
                {/* Instagram */}
                <SocialIcon 
-                 href="https://www.instagram.com/Andropedia_srm.rmp?igsh=MTIyaTA3dW9rb2UxYg==" 
+                 href="https://www.instagram.com/ANDROPEDIA_srm.rmp?igsh=MTIyaTA3dW9rb2UxYg==" 
                  icon={<Instagram size={20} />} 
                />
             </div>
@@ -114,7 +114,7 @@ const Footer = () => {
       
       <div className="border-t border-white/10 relative group cursor-default">
          <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-         <h1 className="text-[12vw] leading-none font-bold text-center tracking-tighter text-white/5 group-hover:text-white/10 transition-colors duration-500 select-none">Andropedia</h1>
+         <h1 className="text-[12vw] leading-none font-bold text-center tracking-tighter text-white/5 group-hover:text-white/10 transition-colors duration-500 select-none">ANDROPEDIA</h1>
       </div>
 
       <div className="bg-blue-600 text-black py-2 overflow-hidden border-t border-blue-400">

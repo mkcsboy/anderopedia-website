@@ -83,7 +83,7 @@ const About = () => {
 
             <div className="space-y-6 text-gray-300 leading-relaxed font-light text-lg">
               <p>
-                <span className="text-blue-400 font-bold">{'>'}</span> Andropedia is not just a club; it is a <span className="text-white font-medium">Gateway to technological excellence</span>. We bridge the gap between theoretical inputs and industry-grade outputs.
+                <span className="text-blue-400 font-bold">{'>'}</span> ANDROPEDIA is not just a club; it is a <span className="text-white font-medium">Gateway to technological excellence</span>. We bridge the gap between theoretical inputs and industry-grade outputs.
               </p>
               <p>
                  <span className="text-blue-400 font-bold">{'>'}</span> Operating across a multidisciplinary matrix—Technical, Design, Media, PR, and R&D—we equip members with next-gen capabilities in Cloud Computing, AI, and Machine Learning via immersive protocols like SKYLINX.

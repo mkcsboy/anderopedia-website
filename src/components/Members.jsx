@@ -114,9 +114,10 @@ const Members = () => {
 
               <div className="flex flex-col xl:flex-row gap-8 justify-center items-start">
                 {/* LEADS */}
-                <div className="flex flex-wrap gap-8 justify-center xl:justify-end w-full xl:w-auto">
+                <div className="flex flex-wrap xl:flex-nowrap gap-8 justify-center xl:justify-end w-full xl:w-auto">
                   {squad.leads.map((lead) => (
-                    <div key={lead.id} className="w-full md:w-[280px]"> 
+                    // Added 'shrink-0' to prevent squishing if screen is tight
+                    <div key={lead.id} className="w-full md:w-[280px] shrink-0"> 
                       <MemberCard member={lead} tier="lead" />
                     </div>
                   ))}
